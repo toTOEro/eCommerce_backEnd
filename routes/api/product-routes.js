@@ -55,7 +55,6 @@ router.post('/', async (req, res) => {
             tag_id,
           };
         });
-        console.log(productTagIdArr)
         return ProductTag.bulkCreate(productTagIdArr);
       }
       // if no product tags, just respond
