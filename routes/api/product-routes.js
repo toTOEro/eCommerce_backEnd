@@ -21,6 +21,12 @@ router.get('/:id', async (req, res) => {
     const productData = await Product.findByPk(req.params.id, {
       include: [{ model: Category }, { model: Tag, through: ProductTag}],
     });
+
+    if (!productData) {
+      res.status(404).json({message: "Could not find a product with this ID!"});
+      return;
+    };
+
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err)
@@ -49,6 +55,7 @@ router.post('/', async (req, res) => {
             tag_id,
           };
         });
+        console.log(productTagIdArr)
         return ProductTag.bulkCreate(productTagIdArr);
       }
       // if no product tags, just respond
