@@ -8,7 +8,7 @@
   
   ## Example Video
   
-  https://drive.google.com/file/d/1QS-0QozXDzUtVjelok6QidUg7gQvC7C1/view
+  https://drive.google.com/file/d/1gYTR2_AtQXURCZqocKSCRWLQcqowOsWF/view?usp=sharing
 
   ## Description
 
