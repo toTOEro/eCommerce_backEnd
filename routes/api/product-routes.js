@@ -103,9 +103,9 @@ router.put('/:id', async (req, res) => {
         ProductTag.bulkCreate(newProductTags),
       ]);
     })
-    .then((updatedProductTags) => res.json(updatedProductTags))
+    .then(() => res.status(200).json('Successfully updated product!'))
     .catch((err) => {
-      // console.log(err);
+      console.log(err);
       res.status(400).json(err);
     });
 });
@@ -121,11 +121,11 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (!productData) {
-      res.status(404).json({ message: 'No category found with that ID!' });
+      res.status(404).json({ message: 'No product found with that ID!' });
       return;
     };
 
-    res.status(200).json(productData);
+    res.status(200).json({message: `Successfully deleted product ID: ${req.params.id}`});
   } catch (err) {
     res.status(500).json(err);
   };
